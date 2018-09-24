@@ -218,7 +218,8 @@ extension DependencyContainer {
       resolvable.resolveDependencies(self)
     }
     
-    try autoInjectProperties(in: resolvedInstance)
+    // TODO: HOTFIX. Needs to be fixed.
+//    try autoInjectProperties(in: resolvedInstance)
     try definition.resolveProperties(of: resolvedInstance, container: self)
     
     log(level: .Verbose, "Resolved type \(key.type) with \(resolvedInstance)")
